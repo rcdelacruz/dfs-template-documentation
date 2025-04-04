@@ -1,0 +1,78 @@
+site_name: Detailed Functional Specification Guide
+site_description: Comprehensive guide for creating Detailed Functional Specifications for outsourcing projects
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+
+plugins:
+  - search
+  - mermaid2
+
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - DFS Guide:
+    - Introduction: guide/introduction.md
+    - Template Structure: guide/template-structure.md
+    - When to Use: guide/when-to-use.md
+    - Customization: guide/customization.md
+  - Template:
+    - Overview: template/overview.md
+    - Document Control: template/document-control.md
+    - Introduction: template/introduction.md
+    - Business Requirements: template/business-requirements.md
+    - Functional Specifications: template/functional-specifications.md
+    - Technical Specifications: template/technical-specifications.md
+    - Implementation Details: template/implementation-details.md
+    - Testing Requirements: template/testing-requirements.md
+    - Deployment Specifications: template/deployment-specifications.md
+    - Operations and Maintenance: template/operations-and-maintenance.md
+    - Appendices: template/appendices.md
+  - Example:
+    - E-Commerce Overview: example/overview.md
+    - Introduction: example/introduction.md
+    - Business Requirements: example/business-requirements.md
+    - Functional Specifications: example/functional-specifications.md
+    - Technical Specifications: example/technical-specifications.md
+    - Implementation Details: example/implementation-details.md
+    - Testing Requirements: example/testing-requirements.md
+    - Deployment Specifications: example/deployment-specifications.md
+    - Operations and Maintenance: example/operations-and-maintenance.md
+    - Appendices: example/appendices.md
