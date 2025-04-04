@@ -61,6 +61,42 @@ mkdocs serve
 
 Then open your browser and navigate to: `http://127.0.0.1:8000`
 
+## Converting to Word and PDF
+
+The repository includes a conversion tool to generate Microsoft Word and PDF versions of the documentation.
+
+### Prerequisites
+
+1. Install Pandoc (document conversion tool):
+   - Ubuntu/Debian: `sudo apt-get install pandoc`
+   - macOS: `brew install pandoc`
+   - Windows: `choco install pandoc`
+
+2. Install required Python packages:
+   ```bash
+   pip install pypandoc
+   ```
+
+3. For PDF generation, you'll also need a LaTeX engine:
+   - Ubuntu/Debian: `sudo apt-get install texlive-xetex`
+   - macOS: Install MacTeX from https://www.tug.org/mactex/
+   - Windows: Install MiKTeX from https://miktex.org/
+
+### Running the Conversion
+
+```bash
+# Make sure you're in the project directory
+cd dfs-template-documentation
+
+# Run the conversion script
+python tools/convert_to_docs.py
+```
+
+This will generate:
+- A single merged Word document in `exports/word/dfs_documentation.docx`
+- A single merged PDF document in `exports/pdf/dfs_documentation.pdf`
+- Individual Word and PDF files for each markdown file in the `exports` directory
+
 ## Building for Production
 
 To build the static site for production hosting:
@@ -84,6 +120,8 @@ This will create a `site` directory containing the generated static website.
 │   ├── template/            # Template sections with examples
 │   ├── example/             # Complete DFS example
 │   └── index.md             # Home page
+├── tools/                   # Conversion and utility scripts
+│   └── convert_to_docs.py   # Markdown to Word/PDF converter
 ├── mkdocs.yml               # MkDocs configuration
 └── README.md                # This file
 ```
